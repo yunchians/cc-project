@@ -4,24 +4,19 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
-    routes: [{
-            path: '/',
-            redirect: {
-                name: 'index'
-            }
+    mode: 'hash',
+    routes: [
+        {
+            path: '',
+            name: 'index',
+            component: () =>
+                import ( /* webpackChunkName: "index" */ '../page/index')
         },
         {
             path: '/index',
             name: 'index',
             component: () =>
                 import ( /* webpackChunkName: "index" */ '../page/index')
-        },
-        {
-            path: '/queueTest',
-            name: 'queueTest',
-            component: () =>
-                import ( /* webpackChunkName: "queueTest" */ '../page/queueTest')
         },
         {
             path: '/example',
