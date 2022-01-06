@@ -1,14 +1,16 @@
 <template lang="pug">
   div
-    h1 Hello
+    img(src='@/assets/comingsoon.jpg')
 </template>
 
 <script>
 export default {
-  name: 'example'
+  name: 'index'
 }
 </script>
 
 <style scoped>
-
+img {
+  width: 50%;
+}
 </style>
