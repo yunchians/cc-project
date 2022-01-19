@@ -56,6 +56,7 @@
 
 <script>
 import { initFbsdk } from "@/config/facebook_oAuth.js";
+import { getMapData } from "@/api/map.js"
 
 export default {
   name: "index",
@@ -80,6 +81,11 @@ export default {
   },
   watch: {
     // 監聽值
+    'step': function(val) {
+      if (val === 3) {
+        getMapData()
+      }
+    }
   },
   // BEGIN--生命週期
   beforeCreate: function () {
@@ -116,10 +122,10 @@ export default {
         .then((GoogleUser) => {
           // on success do something
           // console.log('GoogleUser', GoogleUser)
-          console.log("getId", GoogleUser.getId());
-          console.log("basicprofile", GoogleUser.getBasicProfile().getName());
-          console.log("getBasicProfile", GoogleUser.getBasicProfile());
-          console.log("getAuthResponse", GoogleUser.getAuthResponse());
+          // console.log("getId", GoogleUser.getId());
+          // console.log("basicprofile", GoogleUser.getBasicProfile().getName());
+          // console.log("getBasicProfile", GoogleUser.getBasicProfile());
+          // console.log("getAuthResponse", GoogleUser.getAuthResponse());
           const userInfo = {
             loginType: "google",
             google: {
@@ -144,7 +150,7 @@ export default {
     loginWithFacebook() {
       window.FB.login((response) => {
         if (response && response.authResponse) {
-          console.log("response", response);
+          // console.log("response", response);
           const userInfo = {
             loginType: "fb",
             fb: {
@@ -157,7 +163,7 @@ export default {
             `/${response.authResponse.userID}`,
             (userResponse) => {
               if (userResponse) {
-                console.log(userResponse);
+                // console.log(userResponse);
                 const userInfo = {
                   loginType: "fb",
                   fb: {
@@ -173,7 +179,6 @@ export default {
           );
         }
       }, this.params);
-      // , this.params
     }
   },
   // END--生命週期

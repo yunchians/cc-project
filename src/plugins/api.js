@@ -1,5 +1,8 @@
 export function fetchAPI({ url, method, headers, data }, option = {}) {
-  console.log('url, method, headers, data', url, method, headers, data)
+  console.log('url', url)
+  console.log('method', method)
+  console.log('headers', headers)
+  console.log('data', data)
   return fetch(url, { // url 請求位置
       method: method || 'GET', //請求方法
       body: data ? JSON.stringify(data) : null, // 發送給伺服器的資料

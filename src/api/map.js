@@ -5,9 +5,10 @@ export function getMapData(params) {
   return fetchAPI({
     url: 'https://cors-anywhere.herokuapp.com/https://asia-east2-botfat.cloudfunctions.net/project_controller',
     method: 'POST',
+    headers: { 'content-type': 'application/json' },
     data: {
-      'lat': '12.89',
-      'lng': '89.11'
+      'lat': '23.697809',
+      'lng': '120.960518'
     }
   })
 }
