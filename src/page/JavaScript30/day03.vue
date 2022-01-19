@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <h1>
+    <p class="text-4xl">
       Update CSS Variables with <span :style="{ color: bgColor }">JS</span>
     </h1>
     <div class="content">
@@ -74,6 +74,7 @@ export default {
 .wrapper {
   width: 80%;
   margin: 0px auto;
+  padding: 30px 0px;
 }
 .content {
   ul {
@@ -82,16 +83,16 @@ export default {
     padding: 0px;
     li {
       label {
-        font-size: 30px;
+        font-size: 25px;
       }
       input {
         margin-left: 10px;
       }
     }
   }
-}
-img,
-.controls {
+  img {
+    margin: 0px auto;
+  }
 }
 .controls {
   margin-bottom: 20px;

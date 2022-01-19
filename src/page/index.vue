@@ -199,7 +199,7 @@ export default {
   border-radius: 3px;
   display: inline-block;
   margin-top: 0;
-  width: 47.5%;
+  width: 280px;
   padding: 15px;
   text-align: center;
   position: inherit;
