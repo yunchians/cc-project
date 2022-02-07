@@ -43,6 +43,15 @@ const router = new Router({
                 import ( /* webpackChunkName: "example" */ '../page/JavaScript30/day04')
         },
         {
+            path: '/lynked',
+            name: 'lynked',
+            meta: {
+                title: 'lynked'
+            },
+            component: () =>
+                import ( /* webpackChunkName: "example" */ '../page/lynked')
+        },
+        {
             path: '/example',
             name: 'example',
             meta: {
